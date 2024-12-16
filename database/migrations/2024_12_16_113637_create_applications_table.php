@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('about');
             $table->string('status');
+            $table->string('user_name');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();

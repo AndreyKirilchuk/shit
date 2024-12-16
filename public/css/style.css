@@ -1,3 +1,158 @@
 body{
-    background: red;
+    background: #111827;
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+}
+
+.container{
+    max-width: 1440px;
+    margin:0 auto;
+    padding: 0px 20px;
+}
+
+.error{
+    color: #ff3f3f;
+    font-weight: 500;
+}
+
+button{
+    background: #0082ff;
+    padding:12px 24px;
+    cursor: pointer;
+    color: white;
+    border: inherit;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover{
+    background: #016ad1;
+}
+
+form{
+    background: #1f2937;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: white;
+    max-width: 500px;
+
+    h2{
+       text-align: center;
+        line-height: 0;
+        font-weight: 600;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    padding:28px 32px;
+    border-radius: 8px;
+
+    button{
+        width: 100%;
+    }
+
+    div:last-child{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+input, textarea, select{
+    background: #374050;
+    outline: none;
+    border-radius:8px;
+    border:none;
+    color:white;
+    padding:12px;
+    font-size: 16px;
+
+    :focus{
+        outline: none;
+    }
+}
+
+textarea{
+    resize: vertical;
+}
+
+input::placeholder{
+    color: #acacac;
+}
+
+input[type=password]::placeholder{
+    letter-spacing: 2px;
+}
+
+.form_center{
+    margin:200px auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0px;
+    color: white;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.header_container{
+    background: #1f2937;
+    border-bottom: 1px solid #1f2937;
+}
+
+.applications_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+
+.application{
+    background: #1f2937;
+    border-radius: 15px;
+    padding:24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 400px;
+
+    h4{line-height: 0}
+
+    form{
+        padding: 0;
+        gap: 15px;
+    }
+}
+
+.container{
+    color: white;
 }

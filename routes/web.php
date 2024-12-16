@@ -14,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
-    Route::get('/', function () {
-        Route::redirect('/applications');
-    });
+    Route::get('/', [\App\Http\Controllers\ApplcationsController::class, 'show']);
 
-    Route::view('/applications', 'pages/applications')->name('dashboard');
-    Route::get('/logout', [\App\Http\Controllers\UserController::class.'logout'])->name('logout');
+    Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+
+    Route::view('/make_applications',  'pages/make_applications');
+
+    Route::post('/applications', [\App\Http\Controllers\ApplcationsController::class, 'create']);
+
+    Route::middleware(['admins'])->group( function (){
+        Route::get('/admin_panel', [\App\Http\Controllers\ApplcationsController::class, 'index']);
+        Route::patch('/application/{id}', [\App\Http\Controllers\ApplcationsController::class, 'update']);
+    });
 });
 
 Route::view('/login', 'pages/login');
